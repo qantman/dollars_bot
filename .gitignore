@@ -1,0 +1,43 @@
+/build
+/hardware
+/venv
+/Music
+/node_modules
+/downloads
+/records
+/data
+/test-bin
+
+*.json
+*.zip
+
+# local env files
+app/config.py
+*.ini
+.env.local
+.env.*.local
+
+# Log files
+/logs
+*.log*
+*.log
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+*.pyc
+*.csv
+*.env
+*.iml
+.DS_Store
+.directory
+
+manifest.mf
+nbbuild.xml
+nbproject
