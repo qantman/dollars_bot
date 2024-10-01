@@ -25,14 +25,17 @@ async def cmd_find(mes: Message, state: FSMContext):
 @router.message(Choosing.choosing_name)
 async def cmd_chose_song(mes: Message, state: FSMContext):
     user_message = mes.text
+    user_id = mes.from_user.id
+    logging.info(f"user_id: {user_id}")
     logging.info("state: choosing_song")
     logging.info(f"mes: {user_message}")
     dollar_rate = await Dollar_Rate().get_dollar_rate()
     rub, kop = parser.parse_dollar_rate(dollar_rate)
+    logging.info(f"{rub} {kop}")
     if user_message:
         await state.update_data(choosing_name=user_message)
         await state.set_state(Choosing.choosing_name)
         data = await state.get_data()
         await mes.answer(f"Рад знакомству, {data['choosing_name']}")
         await mes.answer(f"Курс доллара сегодня равен {rub}, {kop}")
-
+        await state.clear()

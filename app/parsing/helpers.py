@@ -1,4 +1,9 @@
+import logging
+
+
 def plural(num: str, ruble: bool):
+    logging.info(num)
+    logging.info(ruble)
     if ruble is True:
         words = ["рублей", "рубль", "рубля"]
     else:

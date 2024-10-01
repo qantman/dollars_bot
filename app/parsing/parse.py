@@ -1,3 +1,4 @@
+import logging
 from app.parsing.helpers import plural
 
 
@@ -5,6 +6,7 @@ class parser:
 
     @classmethod
     def parse_dollar_rate(cls, rate: int):
+        logging.info(rate)
         if not rate:
             raise ValueError
         rate = str(rate)
